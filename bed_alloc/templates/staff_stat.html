@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block content %}
+<h1>Waiting List</h1>
+{% for patient in all_patient %}
+<p>{{ patient.id }}</p>
+<p>{{ patient }}</p>
+<p>{{ patient.email }}</p>
+<p>{{ patient.age }}</p>
+<p>{{ patient.ct }}</p>
+<p>{{ patient.oxy }}</p>
+<p>{{ patient.oc }}</p>
+<hr>
+{% endfor %}
+{% endblock %}

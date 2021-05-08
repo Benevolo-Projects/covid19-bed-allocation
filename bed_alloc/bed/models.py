@@ -1,10 +1,10 @@
 from django.db import models
 import glob, os
-from django.db.models import F
+from django.db.models import Sum
 
 
 def path_and_rename(instance, filename):
-    name1 = str(len(glob.glob('../pdf/*')))
+    name1 = str(len(glob.glob('./pdf/*')))
     print(name1)
     return os.path.join(name1 + ".pdf")
 
@@ -18,7 +18,6 @@ class Register(models.Model):
     ct = models.PositiveIntegerField()
     oxy = models.PositiveIntegerField()
     oc = models.PositiveIntegerField(default=135)
-    ct_pdf = models.FileField(upload_to=path_and_rename, null=True, blank=True)
 
     def save(self, *args, **kwargs):
         self.oc = self.ct + self.oxy
