@@ -142,7 +142,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-SITE_ID = 1
+SITE_ID = 2
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
@@ -159,3 +159,7 @@ SOCIALACCOUNT_PROVIDERS = {
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
+
+
+MEDIA_URL = '/pdf/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '../pdf')

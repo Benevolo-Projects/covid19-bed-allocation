@@ -1,10 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block content %}
+<h1>Register Patient</h1>
+
+<br>
+<form method="POST" action="{% url 'register' %}">
+    {% csrf_token %}
+    <div class="mb-3">
+        <input name="fname" type="text" placeholder="First Name" class="form-control" aria-describedby="emailHelp" value="{{ fname }}">
+    </div>
+    <div class="mb-3">
+        <input name="lname" type="text" placeholder="Last Name" class="form-control" aria-describedby="emailHelp" value="{{ lname }}">
+    </div>
+    <div class="mb-3">
+        <input name="email" type="email" placeholder="Email Address" class="form-control" aria-describedby="emailHelp" value="{{ email }}">
+    </div>
+    <div class="mb-3">
+        <input name="mobile" type="tel" pattern="[6-9]{1}[0-9]{9}" placeholder="Phone Number" class="form-control" value="{{ mobile }}"
+               aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <input name="age" type="number" min="1" max="110" placeholder="Age" class="form-control" aria-describedby="emailHelp" value="{{ age }}">
+    </div>
+    <div class="mb-3">
+        <input name="ct" type="number" min="0" max="35" placeholder="CT Value" class="form-control" aria-describedby="emailHelp" value="{{ ct }}">
+    </div>
+    <div class="mb-3">
+        <input name="oxy" type="number" min="0" max="100" placeholder="Oxygen" class="form-control" aria-describedby="emailHelp" value="{{ oxy }}">
+    </div>
+    <div class="mb-3">
+        <label for="formFileMd" class="form-label">PDF of Report that contain CT Value</label><br>
+        <input class="btn-default" name="image_ct" id="formFileMd" required type="file" accept=".pdf"/><br>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
+
+{% endblock %}

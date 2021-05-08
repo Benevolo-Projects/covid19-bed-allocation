@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block content %}
+<div>
+<button onclick="location.href = '/status/'" type="submit" style="color:white;background:#3498db; width:20%"
+        class="btn btn-default btn-lg"> Status</button>
+<button onclick="location.href = '/register/'" type="submit" style="color:white;background:#3498db; width:20%"
+        class="btn btn-default btn-lg"> Register Patient</button>
+</div>
+    {% endblock %}
