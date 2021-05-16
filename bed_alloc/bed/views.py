@@ -26,6 +26,7 @@ def register(request):
     form = CreateUserForm()
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
+        # form = CreateUserForm(request.POST)
         if form.is_valid():
             user = form.save()
             name = form.cleaned_data.get('username')
@@ -34,9 +35,9 @@ def register(request):
             user.groups.add(group)
 
             messages.success(request, 'Account is Created successfully for ' + name)
-            return redirect('login')
+            return redirect('register_login')
     context = {'form': form}
-    return render(request, 'register_l.html', context)
+    return render(request, 'signup.html', context)
 
 
 @unauthenticated_user
@@ -53,7 +54,7 @@ def loginpage(request):
         else:
             messages.info(request, 'Username or Password is incorrect')
             return render(request, 'login.html')
-    return render(request, 'login.html', {})
+    return render(request, 'login.html', {}) ##############################
 
 
 def logoutUser(request):
