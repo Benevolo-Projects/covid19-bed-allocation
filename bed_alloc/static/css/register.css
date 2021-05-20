@@ -131,6 +131,11 @@
     margin-top: 100px;
   }
 
+  .register-section{
+  position: relative;
+  padding: 1rem 1rem 0 0;
+}
+
   body {
   font-family: "Karla", sans-serif;
     font-weight: 400;

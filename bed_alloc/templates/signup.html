@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+      {% load static %}
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+      <link rel="shortcut icon" href="{% static 'images/logo.png' %}">
+
+
   <title>Covid19 Triage</title>
-  {% load static %}
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -23,7 +28,7 @@
               <div class="brand-wrapper">
 <!--                <h1><b>Covid19 Triage</b></h1>-->
               </div>
-              <p class="login-card-description"><b>Covid19 Triage</b> - Sign Up</p>
+              <p class="login-card-description"><b><img class="mr-2 mb-1" height="30px" src="{% static 'images/logo.png' %}">Covid19 Triage</b> - Sign Up</p>
 		<form action="" method="post" oninput='confirm_password.setCustomValidity(confirm_password.value != password.value ? "Passwords do not match." : "")'>
 			{% csrf_token %}
                   <div class="form-group">

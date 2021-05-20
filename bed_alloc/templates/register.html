@@ -9,6 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
 
+      <link rel="shortcut icon" href="{% static 'images/logo.png' %}">
+
+
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
 <!--===============================================================================================-->
@@ -52,7 +55,7 @@
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item"><a class="nav-link link-scroll active" style="font-family: 'Karla', sans-serif;" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a></li>
+              <li class="nav-item"><a class="nav-link" style="font-family: 'Karla', sans-serif;" href="{% url 'home' %}">Home</a></li>
               {% if request.user.is_authenticated %}
                     <li class="nav-item"><a class="nav-link" style="font-family: 'Karla', sans-serif;" href="{% url 'logout' %}">Logout</a></li>
                     {% else %}
@@ -65,12 +68,12 @@
     </header>
     <!-- Hero Section-->
 
-<section style="background: url(/static/images/banner-4.png) no-repeat; background-size: 100% 100%">
+<div class="register-section" style="background: url(/static/images/banner-4.png) no-repeat; background-size: 100% 100%">
     <div class="page-wrapper px-3">
       <div class="wrapper wrapper--w680">
           <div class="card card-4">
               <div class="card-body">
-                  <h2 class="title" style="font-family: 'Karla', sans-serif; color:#0563BB "><b>Registration Form</b></h2>
+                  <h2 class="title" style="font-family: 'Karla', sans-serif;"><b>Registration Form</b></h2>
                   <form method="POST" action="{% url 'register' %}">
                         {% csrf_token %}
                       <div class="rowrow row-space">
@@ -128,7 +131,7 @@
           </div>
       </div>
   </div>
-</section>
+</div>
 
 
     <section class="p-0" id="testimonials">
@@ -138,7 +141,7 @@
       <div class="container section-padding-y">
         <div class="row">
           <div class="col-lg-3 mb-4 mb-lg-0">
-            <h2 class="h5 mb-4 font-weight-bold">Covid19 Triage</h2>
+            <h2 class="h5 mb-4 font-weight-bold"><img class="mr-2 mb-1" height="20px" src="{% static 'images/logo.png' %}">Covid19 Triage</h2>
             <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
           </div>
           <div class="col-lg-2 mb-4 mb-lg-0">

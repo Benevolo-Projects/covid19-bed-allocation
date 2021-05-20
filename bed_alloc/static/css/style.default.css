@@ -1305,7 +1305,7 @@ STYLE SWITCHER FOR DEMO
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
   margin-right: 1rem;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 .navbar-toggler {
@@ -2864,7 +2864,7 @@ code {
   padding: 0.5rem 1rem;
   font-weight: 600;
   color: #17141f;
-  font-size: 18px;
+  font-size: 21px;
 }
 
 .nav-link.disabled {

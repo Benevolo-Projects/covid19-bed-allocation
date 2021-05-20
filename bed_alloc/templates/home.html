@@ -20,6 +20,8 @@
     <link rel="stylesheet" type="text/css" href="{% static 'vendor/perfect-scrollbar/perfect-scrollbar.css' %}">
     <!--===============================================================================================-->
 
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}">
+
 
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
@@ -55,7 +57,7 @@
             {% if request.user.is_authenticated %}
             <a class="navbar-brand" href="{% url 'home' %}"><b>{{ user }}</b></a>
             {% else %}
-            <a class="navbar-brand" href="{% url 'home' %}"> Covid19 Triage</a>
+            <a class="navbar-brand" style="color:#222222;" href="{% url 'home' %}"><img class="mr-2" height="30px" src="{% static 'images/logo.png' %}">Covid19 Triage</a>
             {% endif %}
 
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
@@ -101,21 +103,20 @@
                 <ul class="list-inline mb-0">
                     <li class="list-inline-item mb-2  mb-lg-0"><a class="btn btn-primary btn-lg mb-3 px-4"
                                                                   style="color: #fff"
-                                                                  onclick="location.href = '/status/'"> <i
-                            class="fab fa-google-play mr-3"></i>Waiting List</a></li>
+                                                                  onclick="location.href = '/status/'"> <i class="mr-3 fas fa-procedures"></i></i>Waiting List</a></li>
                     <li class="list-inline-item"><a class="btn btn-primary btn-lg mb-3 px-4" style="color: #fff"
-                                                    onclick="location.href = '/register/'"> <i
-                            class="fab fa-app-store mr-3"></i>Register</a></li>
+                                                    onclick="location.href = '/register/'"> <i class="mr-3 fas fa-user-plus"></i>Register</a></li>
                 </ul>
             </div>
             <div class="col-lg-7 home-img">
-                <div class="screen"><img class="img-fluid" src="{% static 'images/Untitled-3.png' %}" alt=""></div>
+                <div class="screen"><img width="108%" src="{% static 'images/Untitled-3.png' %}" alt=""></div>
             </div>
         </div>
     </div>
 </section>
 <section class="bg-center py-0" id="about"
-         style="background: url('/static/images/service-bg.svg') no-repeat; background-size: cover">
+         style="
+         background: url('/static/images/service-bg.svg') no-repeat; background-size: cover">
     <section class="about px-3 py-0">
         <div class="container">
             <p class="h6 text-uppercase text-primary">Services</p>
@@ -261,7 +262,7 @@
     <div class="container section-padding-y">
         <div class="row">
             <div class="col-lg-3 mb-4 mb-lg-0">
-                <h2 class="h5 mb-4 font-weight-bold">Covid19 Triage</h2>
+                <h2 class="h5 mb-4 font-weight-bold"><img class="mr-2 mb-1" height="20px" src="{% static 'images/logo.png' %}">Covid19 Triage</h2>
                 <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                     incididunt ut labore et dolore.</p>
             </div>
