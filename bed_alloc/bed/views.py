@@ -15,7 +15,6 @@ from .forms import CreateUserForm
 from django.contrib.auth.models import Group
 
 
-@login_required(login_url='login')
 def home(request):
     return render(request, 'home.html')
 
@@ -59,7 +58,7 @@ def loginpage(request):
 
 def logoutUser(request):
     logout(request)
-    return redirect('login')
+    return redirect('home')
 
 
 @login_required(login_url='login')
