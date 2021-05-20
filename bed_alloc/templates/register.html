@@ -51,7 +51,12 @@
     <!-- navbar-->
     <header class="header">
       <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container font-weight-bold  pl-3"><a class="navbar-brand" style="font-family: 'Karla', sans-serif;" href="{% url 'home' %}"> Covid19 Triage</a>
+        <div class="container font-weight-bold  pl-3">
+           {% if request.user.is_authenticated %}
+            <a class="navbar-brand" href="{% url 'home' %}"><b>{{ user }}</b></a>
+            {% else %}
+            <a class="navbar-brand" style="color:#222222;" href="{% url 'home' %}"><img class="mr-2" height="30px" src="{% static 'images/logo.png' %}">Covid19 Triage</a>
+            {% endif %}
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
