@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/covid-bed-allocation.iml" filepath="$PROJECT_DIR$/.idea/covid-bed-allocation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/covid19-bed-allocation.iml" filepath="$PROJECT_DIR$/.idea/covid19-bed-allocation.iml" />
     </modules>
   </component>
 </project>
