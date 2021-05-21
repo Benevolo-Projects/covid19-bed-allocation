@@ -49,11 +49,13 @@ def loginpage(request):
 
         if user is not None:
             login(request, user)
+            if user.is_superuser or user.is_staff:
+                return redirect('staff_stat')
             return redirect('home')
         else:
             messages.info(request, 'Username or Password is incorrect')
             return render(request, 'login.html')
-    return render(request, 'login.html', {}) ##############################
+    return render(request, 'login.html', {})
 
 
 def logoutUser(request):
@@ -75,6 +77,17 @@ def staff_stat(request):
 
 
 @login_required(login_url='login')
+@staff_only
+def delete(request, timestamp):
+    event = Register.objects.filter(timestamp=timestamp)
+    event.delete()
+    print(event)
+    messages.success(request, 'patient deleted successfully.')
+    all_patient = Register.objects.all().order_by('oc')
+    return render(request, 'staff_stat.html', {'all_patient': all_patient})
+
+
+@login_required(login_url='login')
 def register_bed(request):
     if request.method == "POST":
         form = RegisterForm(data=request.POST, files=request.FILES)
@@ -91,7 +104,7 @@ def register_bed(request):
             mobile = request.POST['mobile']
             ct = request.POST['ct']
             oxy = request.POST['oxy']
-            messages.success(request, 'There was error please try again ... ')
+            messages.success(request, 'There was error in your form. please try again ... ')
             return render(request, 'register.html', {'fname': fname, 'lname': lname, 'email': email, 'mobile': mobile, 'age': age, 'ct': ct, 'oxy': oxy})
     else:
         return render(request, 'register.html', {})

@@ -12,4 +12,5 @@ urlpatterns = [
     path('status/', views.status, name='status'),
     path('register/', views.register_bed, name='register'),
     path('staff_stat/', views.staff_stat, name='staff_stat'),
+    path('delete/<str:timestamp>', views.delete, name='delete'),
 ]

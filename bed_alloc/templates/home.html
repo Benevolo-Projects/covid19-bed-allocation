@@ -55,9 +55,12 @@
 
         <div class="container font-weight-bold  pl-3">
             {% if request.user.is_authenticated %}
-            <a class="navbar-brand" href="{% url 'home' %}"><b>{{ user }}</b></a>
+            <a class="navbar-brand" href="{% url 'home' %}"><img class="mr-2 mb-1" height="20px"
+                                                                 src="{% static 'images/logo.png' %}"><b>{{ user }}</b></a>
             {% else %}
-            <a class="navbar-brand" style="color:#222222;" href="{% url 'home' %}"><img class="mr-2" height="30px" src="{% static 'images/logo.png' %}">Covid19 Triage</a>
+            <a class="navbar-brand" style="color:#222222;" href="{% url 'home' %}"><img class="mr-2" height="30px"
+                                                                                        src="{% static 'images/logo.png' %}">Covid19
+                Triage</a>
             {% endif %}
 
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
@@ -65,7 +68,7 @@
                     aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link link-scroll active" href="#hero">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item"><a class="nav-link link-scroll" href="#hero">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item"><a class="nav-link link-scroll" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link link-scroll" href="#services">Services</a></li>
@@ -101,12 +104,23 @@
                 <p class="my-4 text-muted">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
                     eirmod.</p>
                 <ul class="list-inline mb-0">
-                    <li class="list-inline-item mb-2  mb-lg-0"><a class="btn btn-primary btn-lg mb-3 px-4"
-                                                                  style="color: #fff"
-                                                                  onclick="location.href = '/status/'"> <i class="mr-3 fas fa-procedures"></i></i>Waiting List</a></li>
+                    <li>
+                        {% if user.is_superuser or user.is_staff %}
+                        <a class="btn btn-primary btn-lg mb-3 px-4" style="color: #fff"
+                           onclick="location.href = '/staff_stat/'"> <i class="mr-3 fas fa-procedures"></i>Waiting
+                            list</a>
+                        {% else %}
+                        <a class="btn btn-primary btn-lg mb-3 px-4"
+                           style="color: #fff"
+                           onclick="location.href = '/status/'"> <i class="mr-3 fas fa-procedures"></i></i>Waiting List</a>
+                        {% endif %}
+                    </li>
                     <li class="list-inline-item"><a class="btn btn-primary btn-lg mb-3 px-4" style="color: #fff"
-                                                    onclick="location.href = '/register/'"> <i class="mr-3 fas fa-user-plus"></i>Register</a></li>
+                                                    onclick="location.href = '/register/'"> <i
+                            class="mr-3 fas fa-user-plus"></i>Register</a></li>
+
                 </ul>
+
             </div>
             <div class="col-lg-7 home-img">
                 <div class="screen"><img width="108%" src="{% static 'images/Untitled-3.png' %}" alt=""></div>
@@ -262,7 +276,8 @@
     <div class="container section-padding-y">
         <div class="row">
             <div class="col-lg-3 mb-4 mb-lg-0">
-                <h2 class="h5 mb-4 font-weight-bold"><img class="mr-2 mb-1" height="20px" src="{% static 'images/logo.png' %}">Covid19 Triage</h2>
+                <h2 class="h5 mb-4 font-weight-bold"><img class="mr-2 mb-1" height="20px"
+                                                          src="{% static 'images/logo.png' %}">Covid19 Triage</h2>
                 <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                     incididunt ut labore et dolore.</p>
             </div>
@@ -281,17 +296,17 @@
                 <h2 class="h5 mb-4">Services</h2>
                 <div class="d-flex">
                     <ul class="list-unstyled mr-4 mb-0">
-                        <li class="mb-2"><a class="footer-link" href="status.html">Waiting List</a></li>
-                        <li class="mb-2"><a class="footer-link" href="register.html">Register</a></li>
+                        <li class="mb-2"><a class="footer-link" href="{% url 'status' %}">Waiting List</a></li>
+                        <li class="mb-2"><a class="footer-link" href="{% url 'register' %}">Register</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-5">
                 <h2 class="h5 mb-4">Contact Info</h2>
                 <ul class="list-unstyled mr-4 mb-3">
-                    <li class="mb-2 text-muted">728 Ocello Street, San Diego, California.</li>
-                    <li class="mb-2"><a class="footer-link" href="tel:619-851-4132">619-851-4132</a></li>
-                    <li class="mb-2"><a class="footer-link" href="mailto:Nova@example.com">Nova@example.com</a></li>
+                    <li class="mb-2 text-muted">72 Savarkar Street, Bandra, Mumbai.</li>
+                    <li class="mb-2"><a class="footer-link" href="tel:999-888-7777">999-888-7777</a></li>
+                    <li class="mb-2"><a class="footer-link" href="mailto:Covid@hospital.com">Covid@hospital.com</a></li>
                 </ul>
                 <ul class="list-inline mb-0">
                     <li class="list-inline-item"><a class="social-link" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -350,6 +365,7 @@
       // while using file:// protocol
       // pls don't forget to change to your domain :)
       injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg');
+
 
 
 

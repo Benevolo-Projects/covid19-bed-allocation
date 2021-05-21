@@ -1,6 +1,7 @@
 from django.db import models
 import glob, os
 from django.db.models import Sum
+from datetime import datetime, date
 
 
 def path_and_rename(instance, filename):
@@ -10,6 +11,8 @@ def path_and_rename(instance, filename):
 
 
 class Register(models.Model):
+    p_id = models.AutoField(primary_key=True)
+    timestamp = models.DateTimeField(auto_now_add=True,  auto_now=False, blank=True)
     fname = models.CharField(max_length=300)
     lname = models.CharField(max_length=300)
     email = models.EmailField()
