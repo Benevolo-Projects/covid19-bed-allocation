@@ -1457,6 +1457,20 @@ STYLE SWITCHER FOR DEMO
   border-color: #0563BB;
 }
 
+
+.btn-diff:hover {
+  color: #FFFFFF;
+  background-color: #222222;
+  border-color: #222222;
+}
+
+.btn-diff {
+  color: #fff;
+  background-color: #0563BB;
+  border-color: #0563BB;
+}
+
+
 .btn-primary:focus, .btn-primary.focus {
   box-shadow: 0 0 0 0.2rem rgba(89, 84, 203, 0.5);
 }
