@@ -71,7 +71,7 @@
                     <li class="nav-item"><a class="nav-link link-scroll" href="#hero">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item"><a class="nav-link link-scroll" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link link-scroll" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link link-scroll" href="#contact">Contact</a></li>
                     {% if request.user.is_authenticated %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}"><b>Logout</b></a></li>
                     {% else %}
@@ -128,7 +128,7 @@
         </div>
     </div>
 </section>
-<section class="bg-center py-0" id="about"
+<section class="bg-center py-0 pt-5" id="about"
          style="
          background: url('/static/images/service-bg.svg') no-repeat; background-size: cover">
     <section class="about px-3 py-0">
@@ -178,85 +178,73 @@
             </div>
         </div>
     </section>
-    <section class="with-pattern-1 px-3" id="services">
+    <section class="with-pattern-1 px-3">
         <div class="container">
             <div class="row align-items-center mb-5">
                 <div class="col-lg-6 mb-5 mb-lg-0"><img class="img-fluid w-100 px-lg-5"
                                                         src="{% static 'images/bed-illustration.png' %}" alt=""></div>
                 <div class="col-lg-6">
                     <h2>The Best Triage Solution for Your Hospital</h2>
-                    <p class="text-muted">Dolor sit amet consectetur elit sed do eiusmod tempor incididunt labore dolore
-                        magna aliqua enim ad minim veniam quis nostrud exercitation.</p>
+                    <p class="text-muted">Want to know that how to use this in hospital? Play the video demo below to get
+                        to know more about functionality of <b>Covid-19 Triage</b></p>
                     <button class="btn btn-primary js-modal-btn" data-video-id="B6uuIHpFkuo"><i
-                            class="fas fa-play-circle mr-2"></i>Play video
+                            class="fas fa-play-circle mr-2"></i>Video Demo
                     </button>
                 </div>
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-5 mb-lg-0">
-                    <h2>Make your own success as simple you clap</h2>
-                    <p class="text-muted">Dolor sit amet consectetur elit sed do eiusmod tempor incididunt labore dolore
-                        magna aliqua enim ad minim veniam quis nostrud exercitation.</p>
-                    <ul class="list-check">
-                        <li class="text-muted mb-2">Various Analysis Options</li>
-                        <li class="text-muted mb-2">Page Load Details (time, size, number of requests)</li>
-                        <li class="text-muted mb-2">Waterfall, Video and Report History</li>
+                    <h2>Why to get a COVID-19 VACCINE?</h2>
+                    <p class="text-muted">Get a Covid-19 Vaccine since it's the best wasy to protect yourself, your family
+                    and your community.</p>
+                    <ul class="ml-0 pl-4">
+                        <li class="text-muted mb-2">Vaccination buils protection</li>
+                        <li class="text-muted mb-2">It's safer than getting the diseases</li>
+                        <li class="text-muted mb-2">Vaccination will help us to stop the pandemic</li>
                     </ul>
-                    <button class="btn btn-primary js-modal-btn" data-video-id="B6uuIHpFkuo"><i
-                            class="fas fa-play-circle mr-2"></i>Play video
-                    </button>
+                    <a href="https://www.cowin.gov.in/home" target="_blank">
+                    <button class="btn btn-primary js-modal-btn"><i class="fas fa-syringe pl-0 mr-2"></i>
+                        Get your Vaccine</button></a>
                 </div>
                 <div class="col-lg-6 mt-5">
                     <div class="row">
                         <div class="col-lg-6 col-sm-6 mb-4">
                             <!-- Services Item-->
                             <div class="card border-0 shadow rounded-lg text-left px-2">
-                                <div class="card-body px py-5">
-                                    <svg class="svg-icon" style="width:40px;height:40px;color:#ff904e">
-                                        <use xlink:href="#document-saved-1"></use>
-                                    </svg>
-                                    <h3 class="h5 font-weight-normal h4 my-3">Online Marketing</h3>
-                                    <p class="text-small mb-0 text-muted">Lorem ipsum dolor amet consectetur
-                                        adipisicing.</p>
+                                <div class="card-body pt-4 pb-4">
+                                <img height="100px" src="{% static 'images/icons/no-crowd.png' %}">
+                                    <h3 class="h5 font-weight-normal h4 my-3">Avoid Crowd</h3>
+                                    <p class="text-small mb-0 text-muted">Stay at home to keep yourself away from virus</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-sm-6 mb-4">
                             <!-- Services Item-->
                             <div class="card border-0 shadow rounded-lg text-left px-2">
-                                <div class="card-body px py-5">
-                                    <svg class="svg-icon" style="width:40px;height:40px;color:#39f8d2">
-                                        <use xlink:href="#map-marker-1"></use>
-                                    </svg>
-                                    <h3 class="h5 font-weight-normal h4 my-3">Track your move </h3>
-                                    <p class="text-small mb-0 text-muted">Lorem ipsum dolor amet consectetur
-                                        adipisicing.</p>
+                                <div class="card-body pt-4 pb-4">
+                                <img style="margin-top:10px" height="90px" src="{% static 'images/icons/mask.png' %}">
+                                    <h3 class="h5 font-weight-normal h4 my-3">Wear Mask</h3>
+                                    <p class="text-small mb-0 text-muted">If at all need to go outside, then do wear mask</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-sm-6 mb-4">
                             <!-- Services Item-->
                             <div class="card border-0 shadow rounded-lg text-left px-2">
-                                <div class="card-body px py-5">
-                                    <svg class="svg-icon" style="width:40px;height:40px;color:#8190ff">
-                                        <use xlink:href="#arrow-target-1"></use>
-                                    </svg>
-                                    <h3 class="h5 font-weight-normal h4 my-3">Market analysis</h3>
-                                    <p class="text-small mb-0 text-muted">Lorem ipsum dolor amet consectetur
-                                        adipisicing.</p>
+                                <div class="card-body pt-4 pb-4">
+                                <img height="100px" src="{% static 'images/icons/wash-hands.png' %}">
+                                    <h3 class="h5 font-weight-normal h4 my-3">Wash Hands</h3>
+                                    <p class="text-small mb-0 text-muted">After arriving home do not forget to wash hands</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-sm-6">
                             <!-- Services Item-->
                             <div class="card border-0 shadow rounded-lg text-left px-2">
-                                <div class="card-body px py-5">
-                                    <svg class="svg-icon" style="width:40px;height:40px;color:#ff634b">
-                                        <use xlink:href="#sorting-1"></use>
-                                    </svg>
-                                    <h3 class="h5 font-weight-normal h4 my-3">Full Settings</h3>
-                                    <p class="text-small mb-0 text-muted">Lorem ipsum dolor amet consectetur
-                                        adipisicing.</p>
+                                <div class="card-body pt-4 pb-4">
+                                <img height="100px" src="{% static 'images/icons/distance.png' %}">
+                                    <h3 class="h5 font-weight-normal h4 my-3">Social Distance</h3>
+                                    <p class="text-small mb-0 text-muted">Whenever step out, keep in mind to keep social distance</p>
                                 </div>
                             </div>
                         </div>
@@ -285,10 +273,9 @@
                 <h2 class="h5 mb-4">Quick Links</h2>
                 <div class="d-flex">
                     <ul class="list-unstyled d-inline-block mr-4 mb-0">
-                        <li class="mb-2"><a class="footer-link" href="{% url 'home' %}">Home</a></li>
-                        <li class="mb-2"><a class="footer-link" href="{% url 'home' %}">About us</a></li>
-                        <li class="mb-2"><a class="footer-link" href="{% url 'home' %}">Contact us</a></li>
-                        <li class="mb-2"><a class="footer-link" href="{% url 'home' %}">Services</a></li>
+                        <li class="mb-2"><a class="footer-link" href="#hero">Home</a></li>
+                        <li class="mb-2"><a class="footer-link" href="#about">About us</a></li>
+                        <li class="mb-2"><a class="footer-link" href="#contact">Contact us</a></li>
                     </ul>
                 </div>
             </div>
@@ -302,27 +289,24 @@
                 </div>
             </div>
             <div class="col-lg-5">
-                <h2 class="h5 mb-4">Contact Info</h2>
+                <h2 id="contact" class="h5 mb-4">Contact Info</h2>
                 <ul class="list-unstyled mr-4 mb-3">
-                    <li class="mb-2 text-muted">72 Savarkar Street, Bandra, Mumbai.</li>
-                    <li class="mb-2"><a class="footer-link" href="tel:999-888-7777">999-888-7777</a></li>
-                    <li class="mb-2"><a class="footer-link" href="mailto:Covid@hospital.com">Covid@hospital.com</a></li>
+                    <li class="mb-2">Want to implement this in your hospital?</li>
+                    <li class="mb-2"><a class="footer-link" href="mailto:jimmyaghera123@gmail.com">jimmyaghera123@gmail.com</a></li>
+                    <li class="mb-2"><a class="footer-link" href="mailto:">Type Yours</a></li>
+                    <li class="mb-2"><a class="footer-link" href="mailto:rudra.barad@gmail.com">rudra.barad@gmail.com</a></li>
                 </ul>
                 <ul class="list-inline mb-0">
-                    <li class="list-inline-item"><a class="social-link" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <li class="list-inline-item"><a class="social-link" href="mailto:jimmyaghera123@gmail.com"><i class="fas fa-envelope"></i></a>
                     </li>
-                    <li class="list-inline-item"><a class="social-link" href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li class="list-inline-item"><a class="social-link" href="#"><i class="fab fa-google-plus"></i></a>
-                    </li>
-                    <li class="list-inline-item"><a class="social-link" href="#"><i class="fab fa-instagram"></i></a>
-                    </li>
+                    <li class="list-inline-item"><a class="social-link" href="https://github.com/benevolo-projects"><i class="fab fa-github"></i></a></li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="copyrights">
         <div class="container text-center py-4">
-            <p class="mb-0 text-muted text-sm">&copy; 2021, <a href="https://github.com/benevolo-projects"
+            <p class="mb-0 text-muted text-sm">&copy; 2021 <a href="https://github.com/benevolo-projects"
                                                                target="_blank" class="text-reset">Benevolo Projects</a>.
             </p>
         </div>
